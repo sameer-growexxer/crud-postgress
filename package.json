@@ -1,0 +1,62 @@
+{
+  "name": "sameerpo",
+  "version": "1.0.0",
+  "description": "Sameer sept-2022 PO",
+  "main": "app.js",
+  "scripts": {
+    "start": "nodemon app.js",
+    "test": "NODE_ENV=testing mocha test/alltest.js --exit"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.20.0",
+    "chai-http": "^4.3.0",
+    "cors": "^2.8.5",
+    "dotenv": "^16.0.2",
+    "express": "^4.18.1",
+    "pg": "^8.8.0",
+    "pg-hstore": "^2.3.4",
+    "sequelize": "^6.21.4",
+    "swagger-ui-express": "^4.5.0"
+  },
+  "devDependencies": {
+    "chai": "^4.3.6",
+    "jsdoc": "^3.6.11",
+    "mocha": "^10.0.0",
+    "nodemon": "^2.0.19",
+    "nyc": "^15.1.0",
+    "supertest": "^6.2.4"
+  },
+  "nyc": {
+    "lines": 5,
+    "statements": 5,
+    "functions": 5,
+    "branches": 5,
+    "check-coverage": true,
+    "exclude": [
+      "public",
+      "**/test/**",
+      "config",
+      "model",
+      "utils",
+      "node_modules",
+      "coverage",
+      "migrations",
+      "jsdocs",
+      ".eslintrc.js",
+      "migrate-mongo-config.js",
+      ".git",
+      ".env"
+    ],
+    "reporter": [
+      "lcov",
+      "html"
+    ],
+    "cache": true,
+    "all": true
+  },
+  "directories": {
+    "test": "test"
+  }
+}
